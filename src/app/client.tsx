@@ -55,9 +55,12 @@ export default function ClientPage({ books }: { books: Book[] }) {
   return (
     <article className="grid gap-4">
       <nav className="sticky top-0 z-10 bg-[Canvas] py-3">
-        <ul className="inline-flex gap-4">
-          <li>
+        <ul className="inline-flex gap-10">
+          <li className="flex flex-col gap-1">
+            <label htmlFor="readlist">Selecciona vista</label>
             <select
+              id="readlist"
+              name="readlist"
               className="py-1 rounded-md"
               value={wiew}
               onChange={(e) =>
@@ -71,8 +74,10 @@ export default function ClientPage({ books }: { books: Book[] }) {
             </select>
           </li>
 
-          <li>
+          <li className="flex flex-col gap-1">
+            <label htmlFor="genre">Filtrar por género:</label>
             <select
+              id="genre"
               className="py-1 rounded-md"
               value={genre}
               onChange={(e) => setGenre(e.target.value)}
